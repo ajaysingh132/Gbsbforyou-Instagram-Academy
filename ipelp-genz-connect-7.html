@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPELP – Gen Z Connect | GBSBFORYOU</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #0A0A0F;
+  color: #F1F0FF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background-color: rgba(10,10,15,0.97);
+  border-bottom: 1px solid #2A2A3A;
+  padding: 0 16px;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo-wrap { display: flex; align-items: center; gap: 10px; }
+.logo-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.logo-text { font-size: 14px; font-weight: 700; }
+.logo-sub { font-size: 10px; color: #9090B0; display: block; }
+.nav-btn {
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section { padding: 60px 16px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #EC4899;
+  margin-bottom: 8px;
+  font-family: 'Courier New', monospace;
+}
+h1, h2 { line-height: 1.2; margin-bottom: 16px; }
+h1 { font-size: 32px; font-weight: 900; }
+h2 { font-size: 26px; font-weight: 800; }
+.grad-text {
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.muted { color: #9090B0; }
+.section-sub { color: #9090B0; font-size: 15px; max-width: 560px; margin-bottom: 32px; line-height: 1.7; }
+
+/* HERO */
+.hero {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #0A0A0F;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1C1C27;
+  border: 1px solid #2A2A3A;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: #F59E0B;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+}
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background-color: #F59E0B;
+  display: inline-block;
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.btn-primary {
+  display: inline-block;
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  color: #ffffff;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: #F1F0FF;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid #2A2A3A;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* PIPELINE */
+.pipeline {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 32px;
+}
+.pipeline-label {
+  font-size: 11px;
+  color: #9090B0;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.p-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #2A2A3A;
+}
+.p-step:last-child { border-bottom: none; }
+.p-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background-color: #1C1C27;
+  border: 1px solid #2A2A3A;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.p-icon.active {
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  border: none;
+}
+.p-title { font-weight: 600; font-size: 14px; }
+.p-desc { font-size: 12px; color: #9090B0; }
+.p-status { margin-left: auto; font-size: 11px; font-family: 'Courier New', monospace; white-space: nowrap; }
+.st-active { color: #F59E0B; }
+.st-wait { color: #9090B0; }
+.st-done { color: #10B981; }
+
+/* STATS */
+.stats-bar {
+  background-color: #13131A;
+  border-top: 1px solid #2A2A3A;
+  border-bottom: 1px solid #2A2A3A;
+  padding: 32px 16px;
+}
+.stats-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-size: 28px;
+  font-weight: 900;
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 13px; color: #9090B0; margin-top: 4px; }
+
+/* CARD GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+.card {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 16px;
+  padding: 24px;
+}
+.card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.card-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.card-text { font-size: 13px; color: #9090B0; line-height: 1.6; }
+.tag {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: rgba(107,33,168,0.2);
+  color: #C084FC;
+  border: 1px solid rgba(192,132,252,0.3);
+  border-radius: 50px;
+  padding: 3px 12px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+}
+
+/* CERT LEVELS */
+.cert-level {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.cert-badge {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  border: 2px solid #6B21A8;
+  background-color: rgba(107,33,168,0.1);
+}
+.cert-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.cert-desc { font-size: 12px; color: #9090B0; }
+.cert-reqs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.req-pill {
+  background-color: #1C1C27;
+  border: 1px solid #2A2A3A;
+  border-radius: 50px;
+  padding: 2px 10px;
+  font-size: 11px;
+  color: #9090B0;
+  font-family: 'Courier New', monospace;
+}
+.cert-action { margin-left: auto; flex-shrink: 0; }
+.cert-btn {
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lock { font-size: 20px; opacity: 0.4; }
+
+/* AI STUDIO */
+.studio-tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.studio-tool {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+}
+.tool-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+.tool-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.tool-desc { font-size: 12px; color: #9090B0; line-height: 1.5; }
+.studio-demo {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 16px;
+  padding: 24px;
+}
+.demo-title { font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+.chip {
+  display: inline-block;
+  background-color: rgba(107,33,168,0.2);
+  color: #C084FC;
+  border-radius: 50px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  margin-left: 8px;
+}
+textarea {
+  width: 100%;
+  background-color: #0A0A0F;
+  border: 1px solid #2A2A3A;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #F1F0FF;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  resize: none;
+  outline: none;
+  min-height: 80px;
+  display: block;
+  margin-bottom: 12px;
+}
+textarea::placeholder { color: #9090B0; }
+select {
+  background-color: #1C1C27;
+  border: 1px solid #2A2A3A;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #F1F0FF;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.ai-output {
+  background-color: #0A0A0F;
+  border: 1px solid #2A2A3A;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.output-label {
+  font-size: 11px;
+  color: #10B981;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hashtag { color: #06B6D4; }
+
+/* WORKFLOW */
+.wf-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 24px 0;
+}
+.wf-stage {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wf-stage.done { border-color: rgba(16,185,129,0.4); background-color: rgba(16,185,129,0.05); }
+.wf-stage.current { border-color: #6B21A8; background-color: rgba(107,33,168,0.1); }
+.wf-icon-box { font-size: 22px; }
+.wf-name { font-weight: 600; font-size: 14px; }
+.wf-tag { margin-left: auto; font-size: 11px; font-family: 'Courier New', monospace; }
+.wf-done { color: #10B981; }
+.wf-current { color: #F59E0B; }
+.wf-wait { color: #9090B0; }
+
+/* CONTENT CARDS */
+.content-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.content-card {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.card-thumb {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background-image: linear-gradient(135deg, rgba(107,33,168,0.3), rgba(236,72,153,0.3));
+}
+.card-body { padding: 14px; }
+.card-title2 { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.card-meta { font-size: 12px; color: #9090B0; font-family: 'Courier New', monospace; }
+.status-pill {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  margin-top: 10px;
+}
+.sp-ai { background-color: rgba(6,182,212,0.15); color: #06B6D4; border: 1px solid rgba(6,182,212,0.3); }
+.sp-approved { background-color: rgba(16,185,129,0.15); color: #10B981; border: 1px solid rgba(16,185,129,0.3); }
+.sp-draft { background-color: rgba(107,33,168,0.15); color: #C084FC; border: 1px solid rgba(107,33,168,0.3); }
+
+/* ANALYTICS */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.metric-card {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 16px;
+  padding: 20px;
+}
+.metric-label { font-size: 12px; color: #9090B0; font-family: 'Courier New', monospace; text-transform: uppercase; }
+.metric-value { font-size: 28px; font-weight: 900; margin: 6px 0 4px; }
+.metric-change { font-size: 12px; }
+.up { color: #10B981; }
+.down { color: #EC4899; }
+.mini-bars { display: flex; align-items: flex-end; gap: 3px; height: 36px; margin-top: 12px; }
+.bar { flex: 1; border-radius: 3px 3px 0 0; min-height: 4px; }
+
+/* TRUST */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+.trust-item {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+.trust-icon { font-size: 28px; margin-bottom: 8px; }
+.trust-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+.trust-text { font-size: 12px; color: #9090B0; line-height: 1.5; }
+
+/* COMMUNITY */
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.comm-card {
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+.comm-icon { font-size: 32px; margin-bottom: 8px; }
+.comm-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.comm-count { font-size: 12px; color: #9090B0; font-family: 'Courier New', monospace; }
+.comm-btn {
+  margin-top: 12px;
+  background-color: transparent;
+  border: 1px solid #2A2A3A;
+  color: #F1F0FF;
+  padding: 7px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+/* REGISTER */
+.register-box {
+  max-width: 460px;
+  margin: 0 auto;
+  background-color: #13131A;
+  border: 1px solid #2A2A3A;
+  border-radius: 20px;
+  padding: 28px;
+}
+.reg-row { display: flex; gap: 10px; margin-bottom: 16px; }
+input[type="text"], input[type="tel"] {
+  width: 100%;
+  background-color: #1C1C27;
+  border: 1px solid #2A2A3A;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #F1F0FF;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  display: block;
+  margin-bottom: 12px;
+}
+input::placeholder { color: #9090B0; }
+select.reg-select {
+  width: 100%;
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+}
+.reg-note { font-size: 12px; color: #9090B0; margin-top: 14px; line-height: 1.5; text-align: center; }
+
+/* FOOTER */
+footer {
+  background-color: #13131A;
+  border-top: 1px solid #2A2A3A;
+  padding: 40px 16px 24px;
+}
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 24px;
+}
+.footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.footer-col a { display: block; color: #9090B0; font-size: 13px; margin-bottom: 8px; }
+.footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #2A2A3A;
+  font-size: 12px;
+  color: #9090B0;
+  text-align: center;
+}
+
+/* DIVIDER */
+hr { border: none; border-top: 1px solid #2A2A3A; }
+
+/* AI TUTOR */
+.ai-tutor {
+  background-color: #1C1C27;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.ai-av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, #6B21A8, #EC4899);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.ai-msg { font-size: 13px; color: #9090B0; line-height: 1.6; }
+
+@media(min-width: 600px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .community-grid { grid-template-columns: repeat(4, 1fr); }
+  .analytics-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo-wrap">
+      <div class="logo-icon">🎯</div>
+      <div class="logo-text">
+        IPELP
+        <span class="logo-sub">GEN Z CONNECT · GBSBFORYOU</span>
+      </div>
+    </div>
+    <button class="nav-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Register Free →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" style="padding-top:90px; padding-bottom:50px; padding-left:16px; padding-right:16px;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="hero-badge"><span class="dot"></span>Powered by GBSBFORYOU · Instagram-First Platform</div>
+    <h1>Learn. Certify.<br><span class="grad-text">Create. Publish.</span><br>Inspire.</h1>
+    <p style="color:#9090B0; font-size:16px; max-width:480px; margin-bottom:28px; line-height:1.7;">India's first training-first, certification-based digital creator program — transforming ordinary citizens into responsible, certified public communicators.</p>
+    <button class="btn-primary" onclick="document.getElementById('academy').scrollIntoView({behavior:'smooth'})">🚀 Start Your Journey</button>
+    <button class="btn-outline" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Register Free</button>
+
+    <div class="pipeline" style="margin-top:36px; max-width:520px;">
+      <div class="pipeline-label">// Creator Journey Pipeline</div>
+      <div class="p-step">
+        <div class="p-icon active">📚</div>
+        <div>
+          <div class="p-title">Learn</div>
+          <div class="p-desc">Instagram Academy — 10 modules</div>
+        </div>
+        <span class="p-status st-active">IN PROGRESS</span>
+      </div>
+      <div class="p-step">
+        <div class="p-icon active">🏅</div>
+        <div>
+          <div class="p-title">Certify</div>
+          <div class="p-desc">Exam + Portfolio + Human Review</div>
+        </div>
+        <span class="p-status st-active">UNLOCKED</span>
+      </div>
+      <div class="p-step">
+        <div class="p-icon">✍️</div>
+        <div>
+          <div class="p-title">Create</div>
+          <div class="p-desc">AI Studio — Draft content</div>
+        </div>
+        <span class="p-status st-wait">LOCKED</span>
+      </div>
+      <div class="p-step">
+        <div class="p-icon">👁️</div>
+        <div>
+          <div class="p-title">Editorial Review</div>
+          <div class="p-desc">AI → Editor → Approval</div>
+        </div>
+        <span class="p-status st-wait">LOCKED</span>
+      </div>
+      <div class="p-step">
+        <div class="p-icon">📱</div>
+        <div>
+          <div class="p-title">Publish</div>
+          <div class="p-desc">Instagram → Multi-platform</div>
+        </div>
+        <span class="p-status st-wait">LOCKED</span>
+      </div>
+      <div class="p-step">
+        <div class="p-icon">🌍</div>
+        <div>
+          <div class="p-title">Inspire</div>
+          <div class="p-desc">Press Kit · Media Distribution</div>
+        </div>
+        <span class="p-status st-wait">LOCKED</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num">10,000+</div>
+      <div class="stat-label">Registered Learners</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">Certified Creators</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">48,000+</div>
+      <div class="stat-label">Posts Published</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Languages Supported</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ACADEMY -->
+<section id="academy">
+  <div class="section-inner">
+    <div class="eyebrow">Module 02</div>
+    <h2>Instagram Academy</h2>
+    <p class="section-sub">Structured LMS with video lessons, live classes, AI tutor, quizzes, and assignments — build skills before gaining creator access.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <div class="card-title">Instagram Basics</div>
+        <div class="card-text">Profile setup, algorithm basics, content formats, stories, reels, and carousels.</div>
+        <span class="tag">8 Lessons · 4.2h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">✍️</span>
+        <div class="card-title">Content Writing</div>
+        <div class="card-text">Caption writing, storytelling, hook formulas, CTA design, and bilingual writing.</div>
+        <span class="tag">12 Lessons · 6h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎬</span>
+        <div class="card-title">Reel Production</div>
+        <div class="card-text">Scripting, shooting, editing, transitions, voiceover, and music for Instagram Reels.</div>
+        <span class="tag">10 Lessons · 5h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎨</span>
+        <div class="card-title">Graphic Design</div>
+        <div class="card-text">Canva, color theory, typography, poster design, and brand consistency.</div>
+        <span class="tag">9 Lessons · 5.5h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <div class="card-title">AI Tools for Creators</div>
+        <div class="card-text">ChatGPT, Gemini, image AI, voice AI — using tools ethically and effectively.</div>
+        <span class="tag">15 Lessons · 8h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">📰</span>
+        <div class="card-title">Journalism Ethics</div>
+        <div class="card-text">Truth, accuracy, fairness, source verification, fact-checking, and responsibility.</div>
+        <span class="tag">7 Lessons · 3.5h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🗣️</span>
+        <div class="card-title">Public Communication</div>
+        <div class="card-text">How to communicate responsibly with the public — tone, clarity, and impact.</div>
+        <span class="tag">11 Lessons · 5h</span>
+      </div>
+      <div class="card">
+        <span class="card-icon">🌟</span>
+        <div class="card-title">Digital Leadership</div>
+        <div class="card-text">Building communities, inspiring youth, and leading digital movements responsibly.</div>
+        <span class="tag">6 Lessons · 3h</span>
+      </div>
+    </div>
+    <div class="ai-tutor" style="margin-top:24px; max-width:600px;">
+      <div class="ai-av">🤖</div>
+      <div class="ai-msg">Namaste! I am your AI Tutor. You scored 78% in the last quiz. Shall I review Hashtag Strategy with you before today's assignment?
+        <div style="display:flex;gap:4px;margin-top:8px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:#6B21A8;display:inline-block;animation:blink 1s infinite;"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:#6B21A8;display:inline-block;animation:blink 1s .2s infinite;"></span>
+          <span style="width:7px;height:7px;border-radius:50%;background:#6B21A8;display:inline-block;animation:blink 1s .4s infinite;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- CERTIFICATION -->
+<section id="certify">
+  <div class="section-inner">
+    <div class="eyebrow">Module 03</div>
+    <h2>Certification Engine</h2>
+    <p class="section-sub">6-tier creator certification system with digital Creator ID and QR-verified certificate. No publishing without certification.</p>
+
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#10B981;background-color:rgba(16,185,129,0.1);">🌱</div>
+      <div>
+        <div class="cert-name">Trainee Creator</div>
+        <div class="cert-desc">Entry level — access to learning, no publishing</div>
+        <div class="cert-reqs"><span class="req-pill">Register</span><span class="req-pill">Profile Complete</span></div>
+      </div>
+      <div class="cert-action"><button class="cert-btn">Active ✓</button></div>
+    </div>
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#EC4899;background-color:rgba(236,72,153,0.1);">⭐</div>
+      <div>
+        <div class="cert-name">Certified Creator</div>
+        <div class="cert-desc">Can create drafts, limited publishing</div>
+        <div class="cert-reqs"><span class="req-pill">3 Modules</span><span class="req-pill">Online Exam</span><span class="req-pill">Portfolio</span></div>
+      </div>
+      <div class="cert-action"><button class="cert-btn">Start Exam →</button></div>
+    </div>
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#F59E0B;background-color:rgba(245,158,11,0.1);">🏆</div>
+      <div>
+        <div class="cert-name">Senior Creator</div>
+        <div class="cert-desc">Full publishing + multi-platform access</div>
+        <div class="cert-reqs"><span class="req-pill">All Modules</span><span class="req-pill">50 Posts</span><span class="req-pill">AI Assessment</span></div>
+      </div>
+      <div class="cert-action"><span class="lock">🔒</span></div>
+    </div>
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#10B981;background-color:rgba(16,185,129,0.1);">💎</div>
+      <div>
+        <div class="cert-name">Lead Creator</div>
+        <div class="cert-desc">Campaign lead + mentoring access</div>
+        <div class="cert-reqs"><span class="req-pill">6 Months</span><span class="req-pill">200 Posts</span></div>
+      </div>
+      <div class="cert-action"><span class="lock">🔒</span></div>
+    </div>
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#06B6D4;background-color:rgba(6,182,212,0.1);">📝</div>
+      <div>
+        <div class="cert-name">Editor</div>
+        <div class="cert-desc">Review and approve others' content</div>
+        <div class="cert-reqs"><span class="req-pill">Lead Creator</span><span class="req-pill">Journalism Ethics</span></div>
+      </div>
+      <div class="cert-action"><span class="lock">🔒</span></div>
+    </div>
+    <div class="cert-level">
+      <div class="cert-badge" style="border-color:#F59E0B;background-color:rgba(245,158,11,0.1);">🎓</div>
+      <div>
+        <div class="cert-name">Trainer</div>
+        <div class="cert-desc">Teach the next cohort — highest tier</div>
+        <div class="cert-reqs"><span class="req-pill">Editor</span><span class="req-pill">1 Year</span><span class="req-pill">Board Approval</span></div>
+      </div>
+      <div class="cert-action"><span class="lock">🔒</span></div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- AI STUDIO -->
+<section id="studio">
+  <div class="section-inner">
+    <div class="eyebrow">Module 04</div>
+    <h2>AI Creator Studio</h2>
+    <p class="section-sub">Professional AI workspace for certified creators — captions, scripts, reels, stories, posters, and more in 12+ languages.</p>
+
+    <div class="studio-tools">
+      <div class="studio-tool">
+        <span class="tool-icon">✍️</span>
+        <div class="tool-name">Caption Generator</div>
+        <div class="tool-desc">AI captions with hashtags, tone control, bilingual output</div>
+      </div>
+      <div class="studio-tool">
+        <span class="tool-icon">🎬</span>
+        <div class="tool-name">Script Writer</div>
+        <div class="tool-desc">Reel scripts with hook, body, and CTA</div>
+      </div>
+      <div class="studio-tool">
+        <span class="tool-icon">📋</span>
+        <div class="tool-name">Reel Planner</div>
+        <div class="tool-desc">Content calendar, story arcs, posting schedule</div>
+      </div>
+      <div class="studio-tool">
+        <span class="tool-icon">🎨</span>
+        <div class="tool-name">Poster Generator</div>
+        <div class="tool-desc">AI-designed poster templates with branding</div>
+      </div>
+      <div class="studio-tool">
+        <span class="tool-icon">🌐</span>
+        <div class="tool-name">AI Translation</div>
+        <div class="tool-desc">Hindi, Banjara, Marathi, Tamil and 8+ more</div>
+      </div>
+      <div class="studio-tool">
+        <span class="tool-icon">🔍</span>
+        <div class="tool-name">AI Research</div>
+        <div class="tool-desc">Deep research with source citations</div>
+      </div>
+    </div>
+
+    <div class="studio-demo">
+      <div class="demo-title">Caption Generator <span class="chip">LIVE DEMO</span></div>
+      <textarea id="promptBox" placeholder="Describe your Instagram post... e.g., 'A reel about Banjara women entrepreneurs from Bhopal who are using digital skills'"></textarea>
+      <div>
+        <select>
+          <option>🇮🇳 Hindi + English</option>
+          <option>🇮🇳 Hindi only</option>
+          <option>🇬🇧 English only</option>
+          <option>🗣 Banjara/Gor Boli</option>
+        </select>
+        <select>
+          <option>Tone: Inspiring</option>
+          <option>Tone: Informative</option>
+          <option>Tone: Advocacy</option>
+        </select>
+        <button class="btn-primary" style="margin-top:8px;" onclick="generateCaption()">✨ Generate Caption</button>
+      </div>
+      <div class="ai-output" id="aiOutput">
+        <div class="output-label">✓ AI Generated — Pending Editorial Review</div>
+        <strong>🌺 उनकी मेहनत, उनकी पहचान — Banjara Women Digital Entrepreneurs 💻</strong><br><br>
+        बंजारा समाज की इन साहसी महिलाओं ने Digital Skills की ताकत से एक नया रास्ता बनाया है। भोपाल की इन उद्यमियों की कहानी हमें सिखाती है कि change सिर्फ शहरों में नहीं — हर घर से शुरू होता है। 🙏<br><br>
+        <span class="hashtag">#BanjaraWomen #DigitalEntrepreneur #Bhopal #WomenEmpowerment #GBSBFORYOU #GenZConnect</span>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn-outline" style="padding:8px 18px;font-size:13px;" onclick="copyCaption()">📋 Copy</button>
+        <button class="btn-outline" style="padding:8px 18px;font-size:13px;">📤 Send to Draft</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EDITORIAL WORKFLOW -->
+<section id="workflow">
+  <div class="section-inner">
+    <div class="eyebrow">Module 05</div>
+    <h2>Editorial Workflow</h2>
+    <p class="section-sub">Every content piece travels through a mandatory 8-stage pipeline. No shortcut bypasses the approval process.</p>
+
+    <div class="wf-stages">
+      <div class="wf-stage done">
+        <div class="wf-icon-box">💡</div>
+        <div>
+          <div class="wf-name">Idea</div>
+        </div>
+        <span class="wf-tag wf-done">✓ Complete</span>
+      </div>
+      <div class="wf-stage done">
+        <div class="wf-icon-box">📝</div>
+        <div><div class="wf-name">Draft</div></div>
+        <span class="wf-tag wf-done">✓ Complete</span>
+      </div>
+      <div class="wf-stage current">
+        <div class="wf-icon-box">🤖</div>
+        <div><div class="wf-name">AI Review</div></div>
+        <span class="wf-tag wf-current">⏳ Running...</span>
+      </div>
+      <div class="wf-stage">
+        <div class="wf-icon-box">👁️</div>
+        <div><div class="wf-name">Editor Review</div></div>
+        <span class="wf-tag wf-wait">— Waiting</span>
+      </div>
+      <div class="wf-stage">
+        <div class="wf-icon-box">✅</div>
+        <div><div class="wf-name">Approved</div></div>
+        <span class="wf-tag wf-wait">— Waiting</span>
+      </div>
+      <div class="wf-stage">
+        <div class="wf-icon-box">📱</div>
+        <div><div class="wf-name">Instagram Publishing</div></div>
+        <span class="wf-tag wf-wait">— Waiting</span>
+      </div>
+      <div class="wf-stage">
+        <div class="wf-icon-box">🌐</div>
+        <div><div class="wf-name">Multi-Platform Sharing</div></div>
+        <span class="wf-tag wf-wait">— Waiting</span>
+      </div>
+      <div class="wf-stage">
+        <div class="wf-icon-box">📰</div>
+        <div><div class="wf-name">Press & Media Distribution</div></div>
+        <span class="wf-tag wf-wait">— Waiting</span>
+      </div>
+    </div>
+
+    <div class="content-cards">
+      <div class="content-card">
+        <div class="card-thumb">🌺</div>
+        <div class="card-body">
+          <div class="card-title2">Banjara Women Digital Summit 2024</div>
+          <div class="card-meta">Creator: Priya V. · 2h ago</div>
+          <span class="status-pill sp-ai">🤖 AI Review</span>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="card-thumb" style="background-image:linear-gradient(135deg,rgba(16,185,129,.2),rgba(6,182,212,.2));">🏫</div>
+        <div class="card-body">
+          <div class="card-title2">NST Education Policy Impact Report</div>
+          <div class="card-meta">Creator: Rahul K. · 5h ago</div>
+          <span class="status-pill sp-approved">✅ Approved</span>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="card-thumb" style="background-image:linear-gradient(135deg,rgba(245,158,11,.2),rgba(236,72,153,.2));">🎯</div>
+        <div class="card-body">
+          <div class="card-title2">Gen Z Digital Rights Campaign</div>
+          <div class="card-meta">Creator: Anjali M. · 1d ago</div>
+          <span class="status-pill sp-draft">✍️ Draft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ANALYTICS -->
+<section id="analytics">
+  <div class="section-inner">
+    <div class="eyebrow">Module 09</div>
+    <h2>Analytics Dashboard</h2>
+    <p class="section-sub">Real-time insights on learning, creator activity, publishing outcomes, and campaign performance.</p>
+
+    <div class="analytics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Active Learners</div>
+        <div class="metric-value" style="background-image:linear-gradient(135deg,#6B21A8,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">3,847</div>
+        <div class="metric-change up">↑ 12.4% this week</div>
+        <div class="mini-bars">
+          <div class="bar" style="height:30%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);"></div>
+          <div class="bar" style="height:45%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);opacity:0.6;"></div>
+          <div class="bar" style="height:55%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);"></div>
+          <div class="bar" style="height:70%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);opacity:0.6;"></div>
+          <div class="bar" style="height:100%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);"></div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Content Approved</div>
+        <div class="metric-value" style="color:#10B981;">1,204</div>
+        <div class="metric-change up">↑ 8.1% this week</div>
+        <div class="mini-bars">
+          <div class="bar" style="height:25%;background-color:#10B981;"></div>
+          <div class="bar" style="height:45%;background-color:#10B981;opacity:0.6;"></div>
+          <div class="bar" style="height:60%;background-color:#10B981;"></div>
+          <div class="bar" style="height:80%;background-color:#10B981;opacity:0.6;"></div>
+          <div class="bar" style="height:100%;background-color:#10B981;"></div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Certifications Issued</div>
+        <div class="metric-value" style="color:#F59E0B;">428</div>
+        <div class="metric-change up">↑ 34 this month</div>
+        <div class="mini-bars">
+          <div class="bar" style="height:20%;background-color:#F59E0B;"></div>
+          <div class="bar" style="height:40%;background-color:#F59E0B;opacity:0.6;"></div>
+          <div class="bar" style="height:65%;background-color:#F59E0B;"></div>
+          <div class="bar" style="height:85%;background-color:#F59E0B;opacity:0.6;"></div>
+          <div class="bar" style="height:100%;background-color:#F59E0B;"></div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Engagement Rate</div>
+        <div class="metric-value" style="color:#06B6D4;">6.8%</div>
+        <div class="metric-change up">↑ 2.3% vs last month</div>
+        <div style="margin-top:12px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <span style="font-size:12px;color:#9090B0;width:70px;">Instagram</span>
+            <div style="flex:1;height:6px;background-color:#2A2A3A;border-radius:3px;"><div style="width:80%;height:100%;background-image:linear-gradient(135deg,#6B21A8,#EC4899);border-radius:3px;"></div></div>
+            <span style="font-size:12px;color:#9090B0;">80%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <span style="font-size:12px;color:#9090B0;width:70px;">WhatsApp</span>
+            <div style="flex:1;height:6px;background-color:#2A2A3A;border-radius:3px;"><div style="width:60%;height:100%;background-color:#10B981;border-radius:3px;"></div></div>
+            <span style="font-size:12px;color:#9090B0;">60%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:12px;color:#9090B0;width:70px;">YouTube</span>
+            <div style="flex:1;height:6px;background-color:#2A2A3A;border-radius:3px;"><div style="width:45%;height:100%;background-color:#EC4899;border-radius:3px;"></div></div>
+            <span style="font-size:12px;color:#9090B0;">45%</span>
+          </div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Multi-Platform Reach</div>
+        <div class="metric-value">2.4M</div>
+        <div class="metric-change up">↑ 18% this month</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Content in Review</div>
+        <div class="metric-value" style="color:#EC4899;">89</div>
+        <div class="metric-change down">↓ 5 vs yesterday</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- TRUST FRAMEWORK -->
+<section>
+  <div class="section-inner">
+    <div class="eyebrow">Module 10</div>
+    <h2>GBSBFORYOU Trust Framework</h2>
+    <p class="section-sub">Every approved content carries a transparent trust record — creator attribution, AI disclosure, audit log, and source references.</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">👤</div>
+        <div class="trust-title">Creator Attribution</div>
+        <div class="trust-text">Name, ID, and certification level on every post</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📂</div>
+        <div class="trust-title">Version History</div>
+        <div class="trust-text">Full edit trail from draft to publish</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤖</div>
+        <div class="trust-title">AI Disclosure</div>
+        <div class="trust-text">Every AI-assisted content is clearly labeled</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔍</div>
+        <div class="trust-title">Audit Log</div>
+        <div class="trust-text">Who reviewed, approved, and when</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📚</div>
+        <div class="trust-title">Source References</div>
+        <div class="trust-text">Linked citations and fact-check notes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="section-inner">
+    <div class="eyebrow">Module 08</div>
+    <h2>Community Hubs</h2>
+    <p class="section-sub">Join a dedicated community based on your role — learn together, share ideas, grow as digital communicators.</p>
+    <div class="community-grid">
+      <div class="comm-card">
+        <div class="comm-icon">🎓</div>
+        <div class="comm-name">Students</div>
+        <div class="comm-count">4,210 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">⚡</div>
+        <div class="comm-name">Youth</div>
+        <div class="comm-count">2,840 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">📚</div>
+        <div class="comm-name">Teachers</div>
+        <div class="comm-count">890 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">📰</div>
+        <div class="comm-name">Journalists</div>
+        <div class="comm-count">1,205 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">🎨</div>
+        <div class="comm-name">Artists</div>
+        <div class="comm-count">760 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">🌱</div>
+        <div class="comm-name">NGOs</div>
+        <div class="comm-count">340 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">💼</div>
+        <div class="comm-name">Entrepreneurs</div>
+        <div class="comm-count">1,560 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+      <div class="comm-card">
+        <div class="comm-icon">🤝</div>
+        <div class="comm-name">Volunteers</div>
+        <div class="comm-count">2,100 members</div>
+        <button class="comm-btn" onclick="joinComm(this)">Join Community</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- REGISTER -->
+<section id="register" style="background-color:#13131A;">
+  <div class="section-inner" style="text-align:center;">
+    <div class="eyebrow" style="text-align:center;">Module 01</div>
+    <h2>Register Free — Start Today</h2>
+    <p class="section-sub" style="margin:0 auto 28px;text-align:center;">Anyone can register. Anyone can learn. Become a certified creator and make your voice count.</p>
+    <div class="register-box">
+      <div class="reg-row">
+        <button class="btn-primary" style="flex:1;text-align:center;">📱 Mobile OTP</button>
+        <button class="btn-outline" style="flex:1;text-align:center;">📧 Email</button>
+      </div>
+      <input type="text" placeholder="Full Name">
+      <input type="tel" placeholder="+91 Mobile Number">
+      <select class="reg-select">
+        <option>Choose Your Language</option>
+        <option>हिंदी — Hindi</option>
+        <option>English</option>
+        <option>Banjara / Gor Boli</option>
+        <option>मराठी — Marathi</option>
+        <option>தமிழ் — Tamil</option>
+        <option>తెలుగు — Telugu</option>
+      </select>
+      <select class="reg-select">
+        <option>Your Interest / Community</option>
+        <option>Student</option>
+        <option>Journalist</option>
+        <option>NGO Worker</option>
+        <option>Teacher / Trainer</option>
+        <option>Artist / Creator</option>
+        <option>Entrepreneur</option>
+        <option>DNT / Banjara Community</option>
+      </select>
+      <button class="btn-primary" style="width:100%;text-align:center;font-size:16px;">🚀 Send OTP & Register</button>
+      <p class="reg-note">By registering you agree to the GBSBFORYOU Creator Code of Conduct. Registration is free and open to all. Publishing requires certification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>IPELP · Gen Z Connect</h4>
+      <p style="font-size:13px;color:#9090B0;line-height:1.6;">India's first training-first, certification-based Instagram creator program — empowering DNT, Banjara, and Gen Z communities.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Program</h4>
+      <a href="#">Academy</a>
+      <a href="#">Certification</a>
+      <a href="#">AI Studio</a>
+      <a href="#">Workflow</a>
+    </div>
+    <div class="footer-col">
+      <h4>Community</h4>
+      <a href="#">Students</a>
+      <a href="#">Journalists</a>
+      <a href="#">DNT / Banjara</a>
+    </div>
+    <div class="footer-col">
+      <h4>GBSBFORYOU</h4>
+      <a href="#">About NST</a>
+      <a href="#">Publications</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2024 GBSBFORYOU Publications · Bhopal, MP · All rights reserved &nbsp;|&nbsp; ✓ AI Disclosed &nbsp;|&nbsp; ✓ Certification Based
+  </div>
+</footer>
+
+<script>
+function generateCaption() {
+  var btn = event.target;
+  btn.textContent = '⏳ Generating...';
+  btn.disabled = true;
+  setTimeout(function() {
+    btn.textContent = '✨ Generate Caption';
+    btn.disabled = false;
+    document.getElementById('aiOutput').innerHTML =
+      '<div class="output-label">✓ AI Generated — Pending Editorial Review</div>' +
+      '<strong>🌺 उनकी मेहनत, उनकी पहचान — Banjara Women Digital Entrepreneurs 💻</strong><br><br>' +
+      'बंजारा समाज की इन साहसी महिलाओं ने Digital Skills की ताकत से एक नया रास्ता बनाया है। भोपाल की इन उद्यमियों की कहानी हमें सिखाती है कि change सिर्फ शहरों में नहीं — हर घर से शुरू होता है। 🙏<br><br>' +
+      '<span class="hashtag">#BanjaraWomen #DigitalEntrepreneur #Bhopal #WomenEmpowerment #GBSBFORYOU #GenZConnect</span>';
+  }, 1500);
+}
+
+function copyCaption() {
+  var text = document.getElementById('aiOutput').innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Caption copied!');
+  });
+}
+
+function joinComm(btn) {
+  btn.textContent = '✓ Joined';
+  btn.style.backgroundColor = 'rgba(16,185,129,0.1)';
+  btn.style.borderColor = 'rgba(16,185,129,0.4)';
+  btn.style.color = '#10B981';
+}
+</script>
+</body>
+</html>
